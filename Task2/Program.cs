@@ -1,22 +1,21 @@
-﻿// Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
-Console.Write("Введите первое число > ");
-string num1 = Console.ReadLine();
-int number1 = Convert.ToInt32(num1);
-Console.Write("Введите второе число > ");
-string num2 = Console.ReadLine();
-int number2 = Convert.ToInt32(num2);
-Console.Write("Введите третье число > ");
-string num3 = Console.ReadLine();
-int number3 = Convert.ToInt32(num2);
-if (number1 >= number2 && number1 >= number3)
+﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+int x1 = ReadInt("Введите координату X первой точки: ");
+int y1 = ReadInt("Введите координату Y первой точки: ");
+int z1 = ReadInt("Введите координату Z первой точки: ");
+int x2 = ReadInt("Введите координату X второй точки: ");
+int y2 = ReadInt("Введите координату Y второй точки: ");
+int z2 = ReadInt("Введите координату Z второй точки: ");
+
+int A = x2 - x1;
+int B = y2 - y1;
+int C = z1 - z2;
+
+double length = Math.Sqrt(A * A + B * B + C * C);
+Console.WriteLine($"Расстояние =  {length}");
+
+
+int ReadInt(string message)
 {
-    System.Console.Write("Максимальное число = " + number1);
-}
-else if (number2 >= number3)
-{
-     System.Console.Write("Максимальное число = " + number2);
-}
-else
-{
-    System.Console.Write("Максимальное число = " + number3);
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
