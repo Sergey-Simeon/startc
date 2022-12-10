@@ -1,15 +1,33 @@
-﻿// Напишите программу, которая на вход принимает 2 числа и выдаёт, какое число большее, а какое меньшее.
-Console.Write("Введите первое число > ");
-string num1 = Console.ReadLine();
-int number1 = Convert.ToInt32(num1);
-Console.Write("Введите второе число > ");
-string num2 = Console.ReadLine();
-int number2 = Convert.ToInt32(num2);
-if (number1 > number2)
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом. Не использовать строки
+int Phrase(string message)
+
 {
-    System.Console.Write("Максимальное число = " + number1 + " Минимальное число = " + number2);
+    System.Console.Write($"{message} > ");
+    int answer = Convert.ToInt32(Console.ReadLine());
+    return answer;
 }
-else
-{
-    System.Console.Write("Максимальное число = " + number2 + " Минимальное число = " + number1);
-}
+int number = Phrase("Введите пятизначное число для проверки: ");
+ if(number >= 10000 && number < 100000)
+    {
+        int i = number / 10000;
+        int j = number % 10;
+ 
+            if(i == j)
+            {
+                number = number / 10;
+                int i2 = (number / 100) % 10;
+                int j2 = number % 10;
+                if(i2 == j2)
+                    Console.WriteLine("Введенное число палиндром");
+            }
+            else 
+            Console.WriteLine("Введенное число не палиндром");
+            
+    }
+    else
+    {
+        Console.WriteLine("Некорректное число!");
+    }
+    
+
+ 
